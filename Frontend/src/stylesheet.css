@@ -1,0 +1,71 @@
+
+
+#admin_side, #student_side {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#admin_side {
+  border-right: 2px solid black;
+  background-color: #343027; /* Border on the right side of the admin side */
+}
+
+#student_side {
+  border-left: 2px solid black;
+  background-color: white; /* Border on the left side of the student side */
+}
+
+.admin_side_border, .student_side_border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.student_img {
+  max-width: 300px;
+  max-height: 300px;
+  border: 2px solid #E15100;
+  padding: 100px;
+  margin: auto;
+  border-radius: 20px;
+  position: relative;
+}
+.admin_img{
+  max-width: 300px;
+  max-height: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  border: 2px solid #E15100;
+  margin: auto;
+  border-radius: 20px;
+  position: relative;
+}
+
+.heading_admin, .heading_student {
+  margin-bottom: 20px;
+  color: #E15100;
+}
+#headerexam{
+  color:#E15100;
+  font-size: 20px;
+  position: absolute;
+  top: 3px;
+  left: 16px;
+  font-size: 25px;  
+}   
+p{
+  font-size: small;
+  position: absolute;
+  top: 38px;
+  left: 18px;
+  font-size: 25px; 
+}
