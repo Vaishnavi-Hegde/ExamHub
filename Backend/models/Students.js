@@ -7,11 +7,11 @@ const Schema = mongoose.Schema;
 const SubjectSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: false,
   },
   score: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 
@@ -19,12 +19,12 @@ const SubjectSchema = new Schema({
 const SemesterSchema = new Schema({
   semesterNumber: {
     type: Number,
-    required: true,
+    required: false,
   },
   subjects: [SubjectSchema],
   sgpa: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 
@@ -32,24 +32,24 @@ const SemesterSchema = new Schema({
 const Students = new Schema({
   email: {
     type: String,
-    required: true,
-    unique: true,
+    required: false,
+    unique: false,
   },
   password: {
     type: String,
-    required: true,
+    required: false,
   },
   name: {
     type: String,
-    required: true,
+    required: false,
   },
   branch: {
     type: String,
-    required: true,
+    required: false,
   },
   yearOfAdmission: {
     type: Number,
-    required: true,
+    required: false,
   },
   photo: {
     type: String,
@@ -57,17 +57,17 @@ const Students = new Schema({
   semesters: [SemesterSchema],
   cgpa: {
     type: Number,
-    required: true,
+    required: false,
   },
 });
 
 // Pre-save hook to calculate CGPA
-Students.pre('save', function (next) {
-  if (this.semesters.length > 0) {
-    const totalSgpa = this.semesters.reduce((sum, semester) => sum + semester.sgpa, 0);
-    this.cgpa = totalSgpa / this.semesters.length;
-  }
-  next();
-});
+// Students.pre('save', function (next) {
+//   if (this.semesters.length > 0) {
+//     const totalSgpa = this.semesters.reduce((sum, semester) => sum + semester.sgpa, 0);
+//     this.cgpa = totalSgpa / this.semesters.length;
+//   }
+//   next();
+// });
 
-module.exports = mongoose.model('Student', Students);
+module.exports = mongoose.model('Students', Students);

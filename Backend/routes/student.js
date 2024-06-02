@@ -2,28 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
-const Students = require ('./models/Students');
+const Students = require ('../models/Students');
 const Announcement = require('../models/Announcement');
 
 
 
-router.post('/register', (req, res)=>{
-    // To post / insert data into database
 
-    const {email} = req.body;
-    Students.findOne({email: email})
-    .then(user => {
-        if(user){
-            res.json("Already registered")
-        }
-        else{
-            Students.create(req.body)
-            .then(students => res.json(students))
-            .catch(err => res.json(err))
-        }
-    })
-    
-})
 
 
 router.post('/login', (req, res)=>{

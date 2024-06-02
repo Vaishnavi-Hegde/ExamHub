@@ -4,6 +4,8 @@ const express = require('express');
 const router = express.Router();
 const Admin = require('../models/Admin');
 const Announcement = require('../models/Announcement');
+const Students = require ('../models/Students');
+
 
 //Register Admin
 router.post('/register', (req, res)=>{
@@ -23,6 +25,26 @@ router.post('/register', (req, res)=>{
   })
   
 })
+
+//Register Student
+router.post('/registerStudent', (req, res)=>{
+  // To post / insert data into database
+
+  const {email} = req.body;
+  Students.findOne({email: email})
+  .then(user => {
+      if(user){
+          res.json("Already registered")
+      }
+      else{
+          Students.create(req.body)
+          .then(students => res.json(students))
+          .catch(err => res.json(err))
+      }
+  })
+  
+})
+
 //Admin Login
 router.post('/login', (req, res)=>{
   // To find record from the database
@@ -46,7 +68,7 @@ router.post('/login', (req, res)=>{
 })
 
 // Add a new announcement
-router.post('/announcement', authAdmin, async (req, res) => {
+router.post('/announcement', async (req, res) => {
   const { title, body } = req.body;
 
   try {
