@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 // Define the Subject Schema
 const SubjectSchema = new Schema({
   name: { type: String, required: false },
-  credit: { type: Number, required: false },
+  credit: { type: Number, required: false, default: 1 },
   score: { type: Number, required: false },
   grade: { type: String, required: false },
   gradePoint: { type: Number, required: false },
