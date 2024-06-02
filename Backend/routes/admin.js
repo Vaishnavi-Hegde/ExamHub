@@ -82,7 +82,16 @@ router.post('/announcement', async (req, res) => {
 });
 
 
-
+/*
+{
+  "semesterNumber": 3,
+  "subjects": [
+    { "name": "Mathematics III", "score": 80 },
+    { "name": "Physics II", "score": 85 },
+    { "name": "Chemistry II", "score": 90 }
+  ]
+}
+*/
 // Add or update student results for a given semester
 router.post('/results', async (req, res) => {
   const { semesterNumber, subjects, studentId } = req.body;
