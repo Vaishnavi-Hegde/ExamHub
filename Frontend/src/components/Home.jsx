@@ -2,43 +2,42 @@
 import Navbar from "./Navbar";
 import Announcement from "./Announcement";
 import Footer from "./Footer";
-function Home(){
-   return(
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+function Home() {
+
+  const [announcements, setAnnouncements] = useState([]);
+
+  useEffect(() => {
+    // Fetch announcements when the component mounts
+    fetchAnnouncements();
+  }, []);
+
+  const fetchAnnouncements = async () => {
+    axios.get("http://127.0.0.1:3001/api/student/getAnnouncements")
+      .then(result => {
+        setAnnouncements(result.data ?? [])
+      })
+      .catch(err => console.log(err));
+  };
+
+  return (
     <>
-      <Navbar/>
+      <Navbar type={'student'} />
+      <h1>Announcements</h1>
+      {
+        announcements.map((announcement) => {
+          return (
+            <Announcement
+              key={announcement._id}
+              {...announcement} />
+          )
+        })
+      }
 
-         <Announcement
-         title="VIII-sem-Makeup Revevaluation Last Day"
-         discription="LastDate= 20 MAY Fee=RS.500"/>
-
-        <Announcement
-         title="VIII Sem-MakeUp Result"
-         discription="VII sem-makeup results are out"/>
-         
-        <Announcement
-         title="Application of Backlogs "
-         discription="Last date= 27 May"/>
-       
-        <Announcement
-         title="IA 2 Examinations"
-         discription="IA to for II / IV / VI sem students"/>
-          <Footer/>
-
-        <Announcement
-         title="Make for VIII sem Examinations"
-         discription="Will commence for 13 May to 15th May"/>
-          <Footer/>
-       
-        
-        <Announcement
-        title="Annoucement of  VIII Result"
-        discription="8th May"/>
-        
-        <Announcement
-        title="Annoucement of  VIII Result"
-        discription="8th May"/>
-        <Footer/>
+      <Footer />
     </>
-   );
+  );
 }
 export default Home;
