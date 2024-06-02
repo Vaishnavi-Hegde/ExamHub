@@ -81,4 +81,45 @@ router.post('/announcement', async (req, res) => {
   }
 });
 
+
+
+// Add or update student results for a given semester
+router.post('/results', async (req, res) => {
+  const { semesterNumber, subjects, studentId } = req.body;
+
+  try {
+    const student = await Students.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ msg: 'Student not found' });
+    }
+
+    // Calculate SGPA for the given semester
+    const totalScore = subjects.reduce((sum, subject) => sum + subject.score, 0);
+    const sgpa = totalScore / subjects.length;
+
+    // Find the semester, or add a new one if it doesn't exist
+    const semesterIndex = student.semesters.findIndex(s => s.semesterNumber === semesterNumber);
+    if (semesterIndex >= 0) {
+      // Update existing semester
+      student.semesters[semesterIndex].subjects = subjects;
+      student.semesters[semesterIndex].sgpa = sgpa;
+    } else {
+      // Add new semester
+      student.semesters.push({ semesterNumber, subjects, sgpa });
+    }
+
+    // Recalculate CGPA
+    const totalSgpa = student.semesters.reduce((sum, semester) => sum + semester.sgpa, 0);
+    student.cgpa = totalSgpa / student.semesters.length;
+
+    // Save student document
+    await student.save();
+
+    res.status(200).json({ msg: 'Student results updated successfully', student });
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;
