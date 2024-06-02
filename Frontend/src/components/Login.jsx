@@ -63,8 +63,8 @@ const Login = () => {
                         <button type="submit" className="btn btn-primary">Login</button>
                     </form>
                     {/* TO add ' appostopee */}
-                    <p className='container my-2'>Don&apos;t have an account?</p>
-                    <Link to='/register' className="btn btn-secondary">Register</Link>
+                    {/* <p className='container my-2'>Don&apos;t have an account?</p>
+                    <Link to='/register' className="btn btn-secondary">Register</Link> */}
                 </div>
             </div>
         </div>

@@ -7,9 +7,9 @@ function Home(){
     <>
       <Navbar/>
 
-      <Announcement
-        title="VIII-sem-Makeup Revevaluation Last Day"
-        discription="LastDate= 20 MAY Fee=RS.500"/>
+         <Announcement
+         title="VIII-sem-Makeup Revevaluation Last Day"
+         discription="LastDate= 20 MAY Fee=RS.500"/>
 
         <Announcement
          title="VIII Sem-MakeUp Result"
