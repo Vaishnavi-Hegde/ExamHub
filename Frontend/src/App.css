@@ -1,10 +1,11 @@
 .announcement-form {
-    background-color: #8fe4f5;
+    background-color: #f5dd8f;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
     color: #343027;
+    margin-top: 30px;
   }
   
   .form-section {
@@ -27,7 +28,7 @@
   }
   
   button[type="submit"] {
-    background-color: #007ce1;
+    background-color: #e2903f;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -37,7 +38,7 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #F88F53;
+    background-color: #5366f8;
   }
   a{
     color: #343027;
@@ -49,6 +50,6 @@
   }
   
   .footer-div {
-    background-color: rgb(220, 220, 42);
+    background-color: rgb(220, 140, 42);
     text-align: center;
   }

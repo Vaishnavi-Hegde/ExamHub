@@ -22,18 +22,19 @@
     padding: 10px 20px;
     margin: 0 5px;
     border: none;
-    background-color: #007bff;
+    background-color: #df8704;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .tabs button.active {
-    background-color: #0056b3;
+    background-color: #f9cf6ede;
+    color: black;
 }
 
 .tabs button:hover {
-    background-color: #0056b3;
+    background-color: #b37100;
 }
 
 .tab-content {
