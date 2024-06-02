@@ -7,6 +7,8 @@ import Performance from './Performance';
 import ExamRegistration from './ExamRegistration';
 import Backlog from './forms/Backlog';
 import HomeAdmin from './HomeAdmin';
+import AddAnnoucement from './AddAnnouncement';
+import AddSeating from './AddSeating';
 
 
 function App() {
@@ -23,7 +25,9 @@ function App() {
           <Route path="/homeAdmin" element ={<HomeAdmin/>} />
           <Route path="/performance" element={<Performance/>}/>
           <Route path="/examRegistration" element={<ExamRegistration/>}/>
-          <Route path="/backlog" element={<Backlog/>}/>
+          <Route path="/addAnnoucements" element={<AddAnnoucement/>}/>
+          <Route path="/addSeatingArragement" element={<AddSeating/>}/>
+          
         </Routes>
       </BrowserRouter>
    

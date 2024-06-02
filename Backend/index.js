@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const adminRoutes = require('./routes/admin');
 const studentRoutes = require('./routes/student');
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
