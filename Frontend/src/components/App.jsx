@@ -1,10 +1,8 @@
 import Home from './Home';
-import Login from './Login';
-import Register from './Register';
-import MainLogin from './MainLogin';
+import Login from './Login/Login';
+import RegisterStudent from './Register/RegisterStudent';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import LoginAdmin from './LoginAdmin';
-import RegisterA from './RegisterA';
+import RegisterAdmin from './Register/RegisterAdmin';
 import Performance from './Performance';
 import ExamRegistration from './ExamRegistration';
 import Backlog from './forms/Backlog';
@@ -16,11 +14,11 @@ function App() {
   return (
       <BrowserRouter >
         <Routes>
-          <Route path="/" element ={<MainLogin/>} />
-          <Route path="/register" element ={<Register/>} />
-          <Route path="/registerA" element ={<RegisterA/>} />
-          <Route path="/login" element ={<Login/>} />
-          <Route path="/loginAdmin" element ={<LoginAdmin/>} />
+          <Route path="/" element ={<Login/>} />
+          <Route path="/admin/login" element ={<Login type='admin'/>} />
+          <Route path="/student/login" element ={<Login type='student'/>} />
+          <Route path="/admin/register" element ={<RegisterAdmin/>} />
+          <Route path="/student/register" element ={<RegisterStudent/>} />
           <Route path="/home" element ={<Home/>} />
           <Route path="/homeAdmin" element ={<HomeAdmin/>} />
           <Route path="/performance" element={<Performance/>}/>
