@@ -80,51 +80,61 @@ router.post('/announcement', async (req, res) => {
     res.status(500).send('Server error');
   }
 });
-
-
 /*
 {
-  "semesterNumber": 3,
-  "subjects": [
-    { "name": "Mathematics III", "score": 80 },
-    { "name": "Physics II", "score": 85 },
-    { "name": "Chemistry II", "score": 90 }
+  "results": [
+    {
+      "studentId": "60b8d295f5d2b940d88c32b1",
+      "semesterNumber": 3,
+      "subjects": [
+        { "name": "Mathematics III", "score": 80 },
+        { "name": "Physics II", "score": 85 },
+        { "name": "Chemistry II", "score": 90 }
+      ]
+    },
+    {
+      "studentId": "60b8d295f5d2b940d88c32b2",
+      "semesterNumber": 3,
+      "subjects": [
+        { "name": "Mathematics III", "score": 75 },
+        { "name": "Physics II", "score": 80 },
+        { "name": "Chemistry II", "score": 85 }
+      ]
+    }
   ]
 }
 */
 // Add or update student results for a given semester
-router.post('/results', async (req, res) => {
-  const { semesterNumber, subjects, studentId } = req.body;
+router.post('/addResult', authAdmin, async (req, res) => {
+  const { results } = req.body;
 
   try {
-    const student = await Students.findById(studentId);
-    if (!student) {
-      return res.status(404).json({ msg: 'Student not found' });
+    const bulkOperations = results.map(({ studentId, semesterNumber, subjects }) => ({
+      updateOne: {
+        filter: { _id: studentId },
+        update: {
+          $set: {
+            [`semesters.$[semester].subjects`]: subjects,
+            [`semesters.$[semester].sgpa`]: subjects.reduce((sum, subject) => sum + subject.score, 0) / subjects.length,
+          }
+        },
+        arrayFilters: [{ "semester.semesterNumber": semesterNumber }]
+      }
+    }));
+
+    // Execute bulk operations
+    const bulkWriteResult = await Student.bulkWrite(bulkOperations);
+
+    // Update CGPA for all affected students
+    const studentIds = results.map(({ studentId }) => studentId);
+    const affectedStudents = await Student.find({ _id: { $in: studentIds } });
+    for (let student of affectedStudents) {
+      const totalSgpa = student.semesters.reduce((sum, semester) => sum + semester.sgpa, 0);
+      student.cgpa = totalSgpa / student.semesters.length;
+      await student.save();
     }
 
-    // Calculate SGPA for the given semester
-    const totalScore = subjects.reduce((sum, subject) => sum + subject.score, 0);
-    const sgpa = totalScore / subjects.length;
-
-    // Find the semester, or add a new one if it doesn't exist
-    const semesterIndex = student.semesters.findIndex(s => s.semesterNumber === semesterNumber);
-    if (semesterIndex >= 0) {
-      // Update existing semester
-      student.semesters[semesterIndex].subjects = subjects;
-      student.semesters[semesterIndex].sgpa = sgpa;
-    } else {
-      // Add new semester
-      student.semesters.push({ semesterNumber, subjects, sgpa });
-    }
-
-    // Recalculate CGPA
-    const totalSgpa = student.semesters.reduce((sum, semester) => sum + semester.sgpa, 0);
-    student.cgpa = totalSgpa / student.semesters.length;
-
-    // Save student document
-    await student.save();
-
-    res.status(200).json({ msg: 'Student results updated successfully', student });
+    res.status(200).json({ msg: 'Student results updated successfully', bulkWriteResult });
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server error');
