@@ -1,4 +1,4 @@
-import "../App.css"
+
 function Announcement(props){
     return(
        <div className="Annocement-discription">

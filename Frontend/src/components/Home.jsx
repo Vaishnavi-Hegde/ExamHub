@@ -1,11 +1,13 @@
-import Announcement from './Announcement';
-import Footer from './Footer';
-import Navbar from './Navbar';
+
+import Navbar from "./Navbar";
+import Announcement from "./Announcement";
+import Footer from "./Footer";
 function Home(){
-    return(
-        <>
-        <Navbar/>
-        <Announcement
+   return(
+    <>
+      <Navbar/>
+
+      <Announcement
         title="VIII-sem-Makeup Revevaluation Last Day"
         discription="LastDate= 20 MAY Fee=RS.500"/>
 
@@ -35,10 +37,8 @@ function Home(){
         <Announcement
         title="Annoucement of  VIII Result"
         discription="8th May"/>
-         <Footer/>
-        </>
-
-       
-    )
+        <Footer/>
+    </>
+   );
 }
 export default Home;

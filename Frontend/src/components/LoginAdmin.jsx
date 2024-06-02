@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -18,7 +18,7 @@ const LoginAdmin = () => {
             if(result.data === "Success"){
                 console.log("Login Success");
                 alert('Login successful!')
-                navigate('/home');
+                navigate('/homeAdmin');
             }
             else{
                 alert('Incorrect password! Please try again.');
@@ -30,8 +30,8 @@ const LoginAdmin = () => {
 
     return (
         <div>
-            <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : "linear-gradient(#00d5ff,#0095ff,rgba(93,0,255,.555))"}}>
-                <div className="bg-white p-3 rounded" style={{width : '40%'}}>
+            <div className="d-flex justify-content-center align-items-center text-center vh-100" >
+                <div className="bg-white p-3 rounded" >
                     <h2 className='mb-3 text-primary'>AdminLogin</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">
@@ -62,9 +62,9 @@ const LoginAdmin = () => {
                         </div>
                         <button type="submit" className="btn btn-primary">Login</button>
                     </form>
-                    {/* TO add ' appostopee */}
+                    {/* TO add ' appostopee
                     <p className='container my-2'>Don&apos;t have an account?</p>
-                    <Link to='/registerA' className="btn btn-secondary">Register</Link>
+                    <Link to='/registerA' className="btn btn-secondary">Register</Link> */}
                 </div>
             </div>
         </div>

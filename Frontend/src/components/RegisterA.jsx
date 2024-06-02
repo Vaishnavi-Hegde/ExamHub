@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
@@ -32,8 +32,8 @@ const RegisterA = () => {
 
     return (
         <div>
-            <div className="d-flex justify-content-center align-items-center text-center vh-100" style= {{backgroundImage : "linear-gradient(#00d5ff,#0095ff,rgba(93,0,255,.555))"}}>
-                <div className="bg-white p-3 rounded" style={{width : '40%'}}>
+            <div className="d-flex justify-content-center align-items-center text-center vh-100" >
+                <div className="bg-white p-3 rounded">
                     <h2 className='mb-3 text-primary'>Register Admin</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-start">

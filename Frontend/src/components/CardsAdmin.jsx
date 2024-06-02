@@ -1,11 +1,8 @@
-
-import { Link } from "react-router-dom";
-//import "../App.css"
-import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-function Navbar() {
-  return( 
-  <>
-  <nav className="navbar navbar-expand-lg bg-body-tertiary">
+import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+function CardsAdmin() {
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
     <Link to="/home"className="navbar-brand">Navbar</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +17,7 @@ function Navbar() {
     </div>
   </div>
 </nav>
-  </>);
+    </>
+  )
 }
-export default Navbar;
+export default CardsAdmin;
