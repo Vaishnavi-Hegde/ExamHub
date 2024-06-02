@@ -16,6 +16,7 @@ const LoginForm = ({ loginUrl, successRedirect, registerPath, title }) => {
                 if (result.data === "Success") {
                     console.log("Login Success");
                     alert('Login successful!');
+                    localStorage.setItem('email', email);
                     navigate(successRedirect);
                 } else {
                     alert('Incorrect password! Please try again.');
@@ -58,8 +59,6 @@ const LoginForm = ({ loginUrl, successRedirect, registerPath, title }) => {
                         </div>
                         <button type="submit" className="btn btn-primary">Login</button>
                     </form>
-                    <p className='container my-2'>Don&apos;t have an account?</p>
-                    <Link to={registerPath} className="btn btn-secondary">Register</Link>
                 </div>
             </div>
         </div>

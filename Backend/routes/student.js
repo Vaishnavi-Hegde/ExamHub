@@ -32,7 +32,7 @@ router.post('/login', (req, res)=>{
 })
 
 // GET all announcements
-router.get('/announcements', async (req, res) => {
+router.get('/getAnnouncements', async (req, res) => {
     try {
       const announcements = await Announcement.find().sort({ date: -1 });
       res.json(announcements);
@@ -42,21 +42,13 @@ router.get('/announcements', async (req, res) => {
     }
   });
 
-router.get('/results/:id', async (req, res) => {
+router.get('/getStudent/:email', async (req, res) => {
     try {
-      const student = await Students.findById(req.params.id);
+      let student = await Students.find({email: req.params.email});
       if (!student) {
         return res.status(404).json({ msg: 'Student not found' });
-      }
-  
-      res.json({
-        name: student.name,
-        branch: student.branch,
-        yearOfAdmission: student.yearOfAdmission,
-        photo: student.photo,
-        semesters: student.semesters,
-        cgpa: student.cgpa,
-      });
+      }  
+      res.json(student[0]);
     } catch (error) {
       console.error(error.message);
       if (error.kind === 'ObjectId') {

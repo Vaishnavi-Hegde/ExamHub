@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const RegisterForm = ({ registerUrl, loginUrl }) => {
+const RegisterForm = ({ registerUrl, type = "" }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,9 +22,8 @@ const RegisterForm = ({ registerUrl, loginUrl }) => {
       if (result.data === 'Already registered') {
         alert('E-mail already registered! Please Login to proceed.');
       } else {
-        alert('Registered successfully! Please Login to proceed.');
+        alert('Registered successfully');
       }
-      navigate('/login'); // Redirect to the login page after registration
     } catch (error) {
       console.error('Error occurred:', error);
     }
@@ -34,7 +33,7 @@ const RegisterForm = ({ registerUrl, loginUrl }) => {
     <div>
       <div className="d-flex justify-content-center align-items-center text-center vh-100">
         <div className="bg-white p-3 rounded">
-          <h2 className="mb-3 text-primary">Register</h2>
+          <h2 className="mb-3 text-primary">{"Register "+ type}</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 text-start">
               <label htmlFor="exampleInputName" className="form-label">
@@ -79,11 +78,6 @@ const RegisterForm = ({ registerUrl, loginUrl }) => {
               Register
             </button>
           </form>
-
-          <p className="container my-2">Already have an account ?</p>
-          <Link to={loginUrl} className="btn btn-secondary">
-            Login
-          </Link>
         </div>
       </div>
     </div>

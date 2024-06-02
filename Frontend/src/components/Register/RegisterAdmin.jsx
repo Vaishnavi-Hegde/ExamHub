@@ -6,7 +6,7 @@ const RegisterAdmin = () => {
   return (
     <RegisterForm
       registerUrl="http://localhost:3001/api/admin/register"
-      loginUrl="/admin/login"
+      type="admin"      
     />
   );
 };

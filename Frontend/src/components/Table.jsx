@@ -1,73 +1,41 @@
-import "../App.css"
-function Table(){
-    return(
-        <table>
-  <tr>
-    <th>Course Code</th>
-    <th>CIE</th>
-    <th>SEM End</th>
-    <th>Grade</th>
-    <th>Credits</th>
-    <th>Earned Credits</th>
-    <th>Grade Points</th>
-  </tr>
-  <tr>
-    <td>UG21IS601</td>
-    <td>45</td>
-    <td>92</td>
-    <td>O</td>
-    <td>3</td>
-    <td>3</td>
-    <td>9</td>
-  </tr>
-  <tr>
-    <td>UG21IS609</td>
-    <td>46</td>
-    <td>89</td>
-    <td>O</td>
-    <td>3</td>
-    <td>3</td>
-    <td>9</td>
-  </tr>
-  <tr>
-  <td>UG21IS604</td>
-    <td>38</td>
-    <td>72</td>
-    <td>A</td>
-    <td>3</td>
-    <td>3</td>
-    <td>8</td>
-  </tr>
+import React from "react";
 
-  <tr>
-  <td>UG21is611</td>
-    <td>47</td>
-    <td>90</td>
-    <td>O</td>
-    <td>3</td>
-    <td>3</td>
-    <td>9</td>
-  </tr>
-  <tr>
-  <td>UG21IS602</td>
-    <td>48</td>
-    <td>89</td>
-    <td>O</td>
-    <td>3</td>
-    <td>3</td>
-    <td>9</td>
-  </tr>
-  <tr>
-  <td>UG21IS603</td>
-    <td>48</td>
-    <td>89</td>
-    <td>O</td>
-    <td>3</td>
-    <td>3</td>
-    <td>9</td>
-  </tr>
-</table>
-    )
+function Table({ semester }) {
+  return (
+    <table className="table table-bordered">
+      <thead>
+        <tr>
+          <th className="text-center" colSpan="5">{`Semester ${semester.semesterNumber}`}</th>
+          <th className="text-right" colSpan="1">SGPA</th>
+          <th className="text-right" colSpan="1">{semester.sgpa}</th>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>CIE</th>
+          <th>SEM End</th>
+          <th>Grade</th>
+          <th>Credits</th>
+          <th>Earned Credits</th>
+          <th>Grade Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        {semester.subjects.map((subject, subIndex) => (
+          <tr key={subIndex}>
+            <td>{subject.name}</td>
+            <td>{subject.cie}</td>
+            <td>{subject.see}</td>
+            <td>{subject.grade}</td>
+            <td>{subject.credit}</td>
+            <td>{subject.gradePoint ? subject.credit : 0}</td>
+            <td>{subject.gradePoint}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
 
 export default Table;

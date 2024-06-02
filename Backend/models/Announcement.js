@@ -9,7 +9,7 @@ const AnnouncementSchema = new Schema({
     type: String,
     required: true,
   },
-  body: {
+  description: {
     type: String,
     required: true,
   },

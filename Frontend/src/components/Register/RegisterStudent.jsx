@@ -1,13 +1,17 @@
 // Register.js
 import React from 'react';
 import RegisterForm from './RegisterForm';
+import Navbar from '../Navbar';
 
 const RegisterStudent = () => {
   return (
-    <RegisterForm
-      registerUrl="http://localhost:3001/api/admin/registerStudent"
-      loginUrl="/student/login"
-    />
+    <>
+      <Navbar type="admin" />
+      <RegisterForm
+        registerUrl="http://localhost:3001/api/admin/registerStudent"
+        type="Student"
+      />
+    </>
   );
 };
 

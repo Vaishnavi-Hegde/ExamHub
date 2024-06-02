@@ -10,7 +10,6 @@ import HomeAdmin from './HomeAdmin';
 import AddAnnoucement from './AddAnnouncement';
 import AddSeating from './AddSeating';
 
-
 function App() {
 
   return (
@@ -30,6 +29,7 @@ function App() {
           
         </Routes>
       </BrowserRouter>
+      
    
   )
 }

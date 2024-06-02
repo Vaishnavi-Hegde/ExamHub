@@ -42,3 +42,13 @@
   a{
     color: #343027;
   }
+
+  .scrollable-content {
+    overflow-y: auto;
+    height: calc(100vh - 112px); /* 100vh minus the navbar and footer heights */
+  }
+  
+  .footer-div {
+    background-color: rgb(220, 220, 42);
+    text-align: center;
+  }

@@ -78,13 +78,11 @@ router.post('/login', (req, res) => {
 })
 
 // Add a new announcement
-router.post('/announcement', async (req, res) => {
-  const { title, body } = req.body;
-
+router.post('/addAnnouncement', async (req, res) => {
   try {
-    const announcement = new Announcement({ title, body });
+    const announcement = new Announcement(req.body);
     await announcement.save();
-    res.status(201).json({ msg: 'Announcement created successfully' });
+    res.status(201).json('Announcement created successfully');
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server error');
