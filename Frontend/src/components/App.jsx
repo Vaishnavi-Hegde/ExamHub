@@ -26,7 +26,7 @@ function App() {
           <Route path="/examRegistration" element={<ExamRegistration/>}/>
           <Route path="/addAnnoucements" element={<AddAnnoucement/>}/>
           <Route path="/addSeatingArragement" element={<AddSeating/>}/>
-          <Route path="/backlog" element={<Backlog/>}/>
+          {/* <Route path="/backlog" element={<Backlog/>}/> */}
         </Routes>
       </BrowserRouter>
       
