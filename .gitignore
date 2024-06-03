@@ -1,10 +1,2 @@
 **/node_modules/
-# Ignore files under uploads/students
-Backend/uploads/students/*
-
-# Ignore files under uploads/announcements/photos
-Backend/uploads/announcements/photos/*
-
-# Ignore files under uploads/announcements/pdfs
-Backend/uploads/announcements/pdfs/*
 ExamHub.code-workspace
