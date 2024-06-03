@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { ADMIN_LINKS, STUDENT_LINKS } from "./links";
+import { ADMIN_LINKS, STUDENT_LINKS } from "./constants";
 
 function Navbar({ type = "student" }) {
   const links = type === "student" ? STUDENT_LINKS : ADMIN_LINKS;
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top"> {/* Added bg-dark and navbar-dark classes */}
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
         <div className="container-fluid">
-          <Link to={type === "student" ? "/home" : "/homeAdmin"} className="navbar-brand">
+          <NavLink to={type === "student" ? "/home" : "/homeAdmin"} className="navbar-brand">
             ExamHub
-          </Link>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,9 +25,14 @@ function Navbar({ type = "student" }) {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               {links.map(({ to, title }) => (
-                <Link key={title} to={to} className="nav-link">
+                <NavLink
+                  key={title}
+                  to={to}
+                  className="nav-link"
+                  activeClassName="active"
+                >
                   {title}
-                </Link>
+                </NavLink>
               ))}
             </div>
           </div>

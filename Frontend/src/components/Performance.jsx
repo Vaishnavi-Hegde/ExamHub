@@ -1,12 +1,8 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Credittile from "./Credittile";
-import Profiletile from "./Profiletile";
 import Table from "./Table";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Vphoto from "../assets/vaishnaviPhoto.jpg";
-
 function Performance() {
   const [student, setStudent] = useState(null);
 
@@ -56,7 +52,7 @@ function Performance() {
       <div className="container mt-5">
         <div className="row mb-4">
           <div className="col-md-3">
-            <img src={Vphoto} alt="Student" className="img-fluid rounded-circle" />
+            <img src={'http://127.0.0.1:3001/'+student.photo} alt="Student" className="img-fluid rounded-circle" />
           </div>
           <div className="col-md-9">
             <h3>{student.usn}</h3>

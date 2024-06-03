@@ -1,7 +1,7 @@
 export const STUDENT_LINKS = [
     {to:"/performance", title: "Performance"},
     {to:"/examRegistration", title: "Registration"},
-    {to:"", title: "Seating Arrangement"}
+    {to:"blank", title: "Seating Arrangement"}
   ]
 
 

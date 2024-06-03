@@ -53,3 +53,9 @@
     background-color: rgb(220, 140, 42);
     text-align: center;
   }
+
+  /*Style for active nav-link*/
+  .nav-link.active {
+    font-weight: bold;
+    color: rgb(220, 140, 42) !important;
+  }

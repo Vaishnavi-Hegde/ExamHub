@@ -13,6 +13,16 @@ const AnnouncementSchema = new Schema({
     type: String,
     required: true,
   },
+  photos: {
+    type: Array,
+    required: false,
+    default: []
+  },
+  pdfs: {
+    type: Array,
+    required: false,
+    default: []
+  },
   date: {
     type: Date,
     default: Date.now,
