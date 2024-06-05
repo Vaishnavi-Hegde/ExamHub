@@ -5,11 +5,12 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import RegisterAdmin from './Register/RegisterAdmin';
 import Performance from './Performance';
 import ExamRegistration from './ExamRegistration';
-// import Backlog from './forms/Backlog';
 import HomeAdmin from './HomeAdmin';
 import AddAnnoucement from './AddAnnouncement';
 import AddSeating from './AddSeating';
-
+import ReevalutionForm from './forms/ReevalutionForm';
+import MakeupForm from './forms/MakeupForm';
+import BacklogForm from './forms/BacklogForm';
 function App() {
 
   return (
@@ -26,7 +27,9 @@ function App() {
           <Route path="/examRegistration" element={<ExamRegistration/>}/>
           <Route path="/addAnnoucements" element={<AddAnnoucement/>}/>
           <Route path="/addSeatingArragement" element={<AddSeating/>}/>
-          {/* <Route path="/backlog" element={<Backlog/>}/> */}
+          <Route path="/reevalutionform" element={<ReevalutionForm/>}/>
+          <Route path="/makeupform" element={<MakeupForm/>}/>
+          <Route path="/backlogform" element={<BacklogForm/>}/>
         </Routes>
       </BrowserRouter>
       

@@ -7,9 +7,9 @@ import "../App.css"; // Ensure you import the CSS file
 
 function ExamRegistration() {
   const forms = [
-    { to: "/backlog", FormName: "APPLICATION FOR REEVALUATION" },
-    { to: "/update", FormName: "APPLICATION FOR MAKE-UP" },
-    { to: "/update", FormName: "APPLICATION FOR BACKLOG EXAM" },
+    { to: "/reevalutionform", FormName: "APPLICATION FOR REEVALUATION" },
+    { to: "/makeupform", FormName: "APPLICATION FOR MAKE-UP" },
+    { to: "/backlogform", FormName: "APPLICATION FOR BACKLOG EXAM" },
     { to: "/update", FormName: "APPLICATION FOR GRADE CORRECTION ID" },
     { to: "/update", FormName: "APPLICATION FOR PROVISIONAL DEGREE CERTIFICATE" },
     { to: "/update", FormName: "APPLICATION FOR TRANSCRIPT" },
