@@ -1,8 +1,9 @@
 import './forms.css'
-
+import Navbar from '../Navbar';
 function BacklogForm() {
   return (
     <div>
+      <Navbar/>
       <div>
         <form>
         <div>

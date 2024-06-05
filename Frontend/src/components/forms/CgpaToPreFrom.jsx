@@ -1,13 +1,13 @@
 import './forms.css'
 import Navbar from '../Navbar';
-function ReevalutionForm() {
+function CgpaToPreForm() {
   return (
     <div>
       <Navbar/>
       <div>
         <form>
         <div>
-        <h2>Application for Revaluation</h2>
+        <h2>Application for CGPA to Precentage Conversion</h2>
         </div>
           <div className="form-check">
             <input
@@ -57,46 +57,37 @@ function ReevalutionForm() {
             </div>
           </div>
           <div>
-            <label>Semester</label>
-            <div>
-              <input type="number" className name="form-control3" placeholder="Semester" aria-label="mobilno." aria-describedby="addon-wrapping"/>
-            </div>
-          </div>
-          <div>
             <label>Mobile number:</label>
             <div>
               <input type="number" className name="form-control2" placeholder="Mobile Number(10 characters)" aria-label="mobilno." aria-describedby="addon-wrapping"/>
             </div>
           </div>
           <div>
-          <h3>Tick the appropriate examination and month,year.</h3>
+            <label>No of Transcript Requried</label>
+            <div>
+              <input type="number" className name="form-control2"  aria-label="mobilno." aria-describedby="addon-wrapping"/>
+            </div>
+          </div>
           <div>
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Sem End Examinaton</label>
-                <label>Month and Year:</label>
-                <input type="month" className="monyr"/>
-              </div>
-            </div>
-            <div>
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Supplemantry Semester Examinaton</label>
-                <label>Month and Year:</label>
-                <input type="month" className="monyr"/>
-              </div>
-            </div>
-            </div>
-            <div>
-              <h3>Course Perticulars</h3>
+            <label>Note</label>
+            <p>Transcript will not be issued if candidate has backlog subjects</p>
+          </div>
+          <div>
+        
+              <h3>Semester and SGPA</h3>
             </div>
             <div>
                 <table id="th" className="table table-striped table-hover">
                   <thead>
                       <tr>
-                          <th>Course Code</th>
-                          <th>Course Title</th>
-                          <th>Grade</th>
+                          <th>I</th>
+                          <th>II</th>
+                          <th>III</th>
+                          <th>IV</th>
+                          <th>V</th>
+                          <th>VI</th>
+                          <th>VII</th>
+                          <th>VIII</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -104,30 +95,24 @@ function ReevalutionForm() {
                           <td><input type="text"/></td>
                           <td><input type="text"/></td>
                           <td><input type="text"/></td>
-                      </tr>
-                      <tr>
                           <td><input type="text"/></td>
                           <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
                           <td><input type="text"/></td>
                           <td><input type="text"/></td>
                           <td><input type="text"/></td>
                       </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
+                      
                   </tbody>
               </table>
               </div>
+              <div>
+            <h3>CHECKLIST Of Enclosures</h3>
+            <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <p className="form-check-label" for="flexCheckDefault">Copy of  all completed semester grade cards attested by the Head of the Department Receipt of Fees Paid for Transcripts</p>
+
+            </div>
+          </div>
               <div id="submit_Request">
               <button type="submit" id="submit_btn">SUBMIT REQUEST</button>
             </div>
@@ -138,4 +123,4 @@ function ReevalutionForm() {
   );
 }
 
-export default ReevalutionForm;
+export default CgpaToPreForm;

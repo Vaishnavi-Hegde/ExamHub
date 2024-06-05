@@ -1,13 +1,13 @@
 import './forms.css'
 import Navbar from '../Navbar';
-function ReevalutionForm() {
+function DuplicateDegreeCertificate() {
   return (
     <div>
       <Navbar/>
       <div>
         <form>
         <div>
-        <h2>Application for Revaluation</h2>
+        <h2>Application for the Duplicate Provisional Degree Certificate</h2>
         </div>
           <div className="form-check">
             <input
@@ -69,65 +69,49 @@ function ReevalutionForm() {
             </div>
           </div>
           <div>
-          <h3>Tick the appropriate examination and month,year.</h3>
+            <label>Date:</label>
+            <div>
+              <input type="date" />
+            </div>
+          </div>
+          <h3>Completion of the Degree</h3>
           <div>
               <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Sem End Examinaton</label>
                 <label>Month and Year:</label>
                 <input type="month" className="monyr"/>
               </div>
             </div>
             <div>
-              <div className="form-check">
+            <label>Total Credits Earned:</label>
+            <div>
+              <input type="number" className name="form-control2" />
+            </div>
+          </div>
+          <div>
+            <label>Total Credits Earned:</label>
+            <div>
+              <input type="number" className name="form-control2"  aria-label="mobilno." aria-describedby="addon-wrapping"/>
+            </div>
+          </div>
+          <div>
+            <label>Note:</label>
+            <p>
+                Duplicate PDC will not be issued once the degree certificate is issued by the VTU, Belagavi.
+            </p>
+          </div>
+          <div>
+            <h3>CHECKLIST Of Enclosures</h3>
+            <div className="form-check">
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Supplemantry Semester Examinaton</label>
-                <label>Month and Year:</label>
-                <input type="month" className="monyr"/>
-              </div>
+                <p className="form-check-label" for="flexCheckDefault">Original Police FIR regarding the lost of Original Documents</p>
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <p className="form-check-label" for="flexCheckDefault">Original Affidavit on Stamp paper of Rs.20</p>
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                <p className="form-check-label" for="flexCheckDefault">Enclose copy of ALL Semesters grade cards attested by the Head of the Department</p>
+
             </div>
-            </div>
-            <div>
-              <h3>Course Perticulars</h3>
-            </div>
-            <div>
-                <table id="th" className="table table-striped table-hover">
-                  <thead>
-                      <tr>
-                          <th>Course Code</th>
-                          <th>Course Title</th>
-                          <th>Grade</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                  </tbody>
-              </table>
-              </div>
+          </div>
+          
               <div id="submit_Request">
               <button type="submit" id="submit_btn">SUBMIT REQUEST</button>
             </div>
@@ -138,4 +122,4 @@ function ReevalutionForm() {
   );
 }
 
-export default ReevalutionForm;
+export default DuplicateDegreeCertificate;

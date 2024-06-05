@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Regtile from "./Regtile";
+import "../Registration.css"
 import "../App.css"; // Ensure you import the CSS file
 
 function ExamRegistration() {
@@ -10,15 +11,20 @@ function ExamRegistration() {
     { to: "/reevalutionform", FormName: "APPLICATION FOR REEVALUATION" },
     { to: "/makeupform", FormName: "APPLICATION FOR MAKE-UP" },
     { to: "/backlogform", FormName: "APPLICATION FOR BACKLOG EXAM" },
-    { to: "/update", FormName: "APPLICATION FOR GRADE CORRECTION ID" },
-    { to: "/update", FormName: "APPLICATION FOR PROVISIONAL DEGREE CERTIFICATE" },
-    { to: "/update", FormName: "APPLICATION FOR TRANSCRIPT" },
-    { to: "/update", FormName: "APPLICATION FOR CGPA TO PRECENTAGE CONVERSION" },
-    { to: "/update", FormName: "APPLICATION FOR DUPLICATE GRADE CARD" },
-    { to: "/update", FormName: "APPLICATION FOR DUPLICATE ADMISSION TICKET" },
-    { to: "/update", FormName: "APPLICATION FOR DUPLICATE PROVISIONAL DEGREE CERTIFICATE" },
+    { to: "/gradecorrectionform", FormName: "APPLICATION FOR GRADE CORRECTION ID" },
+    { to: "/degreeCertificateform", FormName: "APPLICATION FOR PROVISIONAL DEGREE CERTIFICATE" },
+    { to: "/duplicatedegreeCertificateform", FormName: "APPLICATION FOR DUPLICATE PROVISIONAL DEGREE CERTIFICATE" },
+    { to: "/transcriptForm", FormName: "APPLICATION FOR TRANSCRIPT" },
+    { to: "/cgpatopreForm", FormName: "APPLICATION FOR CGPA TO PRECENTAGE CONVERSION" },
+    { to: "/gradeCardForm", FormName: "APPLICATION FOR DUPLICATE GRADE CARD" },
+    { to: "/duplicateAdmissionTicketForm", FormName: "APPLICATION FOR DUPLICATE ADMISSION TICKET" },
+    ,
   ];
-
+  const Regtile = ({ FormName }) => (
+    <div className="card">
+      <h2>{FormName}</h2>
+    </div>
+  );
   return (
     <>
       <Navbar />

@@ -11,6 +11,13 @@ import AddSeating from './AddSeating';
 import ReevalutionForm from './forms/ReevalutionForm';
 import MakeupForm from './forms/MakeupForm';
 import BacklogForm from './forms/BacklogForm';
+import GradeCorrectionForm from './forms/GradeCorrectionForm';
+import ProvisionalDegreeCertificateForm from './forms/ProvisionalDegreeCertificateFrom';
+import DuplicateDegreeCertificate from './forms/DuplicateDegreeCertificate';
+import TranscriptForm from './forms/TranscriptForm';
+import CgpaToPreForm from './forms/CgpaToPreFrom';
+import DuplicateGradeCardForm from './forms/DuplicateGradeCardForm'
+import DuplicateAdmissionTicketForm from './forms/DuplicateAdmissionTicketForm';
 function App() {
 
   return (
@@ -30,6 +37,13 @@ function App() {
           <Route path="/reevalutionform" element={<ReevalutionForm/>}/>
           <Route path="/makeupform" element={<MakeupForm/>}/>
           <Route path="/backlogform" element={<BacklogForm/>}/>
+          <Route path="/gradecorrectionform" element={<GradeCorrectionForm/>}/>
+          <Route path="/degreeCertificateform" element={<ProvisionalDegreeCertificateForm/>}/>
+          <Route path="/duplicatedegreeCertificateform" element={<DuplicateDegreeCertificate/>}/>
+          <Route path="/transcriptForm" element={<TranscriptForm/>}/>
+          <Route path="/cgpatopreForm" element={<CgpaToPreForm/>}/>
+          <Route path="/gradeCardForm" element={<DuplicateGradeCardForm/>}/>
+          <Route path="/duplicateAdmissionTicketForm" element={<DuplicateAdmissionTicketForm/>}/>
         </Routes>
       </BrowserRouter>
       

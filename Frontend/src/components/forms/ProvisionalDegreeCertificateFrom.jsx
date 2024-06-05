@@ -1,13 +1,13 @@
 import './forms.css'
 import Navbar from '../Navbar';
-function ReevalutionForm() {
+function ProvisionalDegreeCertificateForm() {
   return (
     <div>
       <Navbar/>
       <div>
         <form>
         <div>
-        <h2>Application for Revaluation</h2>
+        <h2>Application for the Provisional Degree Certificate</h2>
         </div>
           <div className="form-check">
             <input
@@ -69,65 +69,31 @@ function ReevalutionForm() {
             </div>
           </div>
           <div>
-          <h3>Tick the appropriate examination and month,year.</h3>
+            <label>Date:</label>
+            <div>
+              <input type="date" />
+            </div>
+          </div>
+          <h3>Completion of the Degree</h3>
           <div>
               <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Sem End Examinaton</label>
                 <label>Month and Year:</label>
                 <input type="month" className="monyr"/>
               </div>
             </div>
             <div>
-              <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                <label className="form-check-label" for="flexCheckDefault">Supplemantry Semester Examinaton</label>
-                <label>Month and Year:</label>
-                <input type="month" className="monyr"/>
-              </div>
-            </div>
-            </div>
+            <label>Total Credits Earned:</label>
             <div>
-              <h3>Course Perticulars</h3>
+              <input type="number" className name="form-control2" />
             </div>
+          </div>
+          <div>
+            <label>Total Credits Earned:</label>
             <div>
-                <table id="th" className="table table-striped table-hover">
-                  <thead>
-                      <tr>
-                          <th>Course Code</th>
-                          <th>Course Title</th>
-                          <th>Grade</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                      <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                      </tr>
-                  </tbody>
-              </table>
-              </div>
+              <input type="number" className name="form-control2"  aria-label="mobilno." aria-describedby="addon-wrapping"/>
+            </div>
+          </div>
+          
               <div id="submit_Request">
               <button type="submit" id="submit_btn">SUBMIT REQUEST</button>
             </div>
@@ -138,4 +104,4 @@ function ReevalutionForm() {
   );
 }
 
-export default ReevalutionForm;
+export default ProvisionalDegreeCertificateForm;
