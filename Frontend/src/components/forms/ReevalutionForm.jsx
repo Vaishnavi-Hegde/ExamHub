@@ -1,5 +1,6 @@
 import './forms.css'
 import Navbar from '../Navbar';
+import { Link } from 'react-router-dom';
 function ReevalutionForm() {
   return (
     <div>
@@ -129,7 +130,8 @@ function ReevalutionForm() {
               </table>
               </div>
               <div id="submit_Request">
-              <button type="submit" id="submit_btn">SUBMIT REQUEST</button>
+              <Link to='/payment'><button type="submit" id="submit_btn">SUBMIT REQUEST</button></Link>
+
             </div>
         </form>
       </div>

@@ -1,5 +1,6 @@
 import './forms.css'
 import Navbar from '../Navbar';
+import { Link } from 'react-router-dom';
 function BacklogForm() {
   return (
     <div>
@@ -98,9 +99,9 @@ function BacklogForm() {
                           <td><input type="text"/></td>
                       </tr>
                       <tr>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
+                          <td><input type="text" className=''/></td>
+                          <td><input type="text" className=''/></td>
+                          <td><input type="text" className=''/></td>
                       </tr>
                       <tr>
                           <td><input type="text"/></td>
@@ -121,7 +122,7 @@ function BacklogForm() {
               </table>
               </div>
               <div id="submit_Request">
-              <button type="submit" id="submit_btn">SUBMIT REQUEST</button>
+              <Link to='/payment'><button type="submit" id="submit_btn">SUBMIT REQUEST</button></Link>
             </div>
         </form>
       </div>

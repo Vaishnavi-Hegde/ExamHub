@@ -23,7 +23,7 @@ function Navbar({ type = "student" }) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
+            <div className="navbar-nav me-auto mb-2 mb-lg-0">
               {links.map(({ to, title }) => (
                 <NavLink
                   key={title}
