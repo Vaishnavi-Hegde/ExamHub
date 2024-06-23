@@ -34,7 +34,7 @@ const Login = ({type = 'student'}) => {
                 />}
                 {activeTab === 'admin' && <LoginForm
                     loginUrl="http://localhost:3001/api/admin/login"
-                    successRedirect="/homeAdmin"
+                    successRedirect="/addAnnoucements"
                     registerPath="/admin/register"
                     title="Admin Login"
                 />}
