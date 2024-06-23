@@ -19,6 +19,7 @@ import CgpaToPreForm from './forms/CgpaToPreFrom';
 import DuplicateGradeCardForm from './forms/DuplicateGradeCardForm'
 import DuplicateAdmissionTicketForm from './forms/DuplicateAdmissionTicketForm';
 import PaymentPage from './PaymentPage';
+import SeatingArrangement from './SeatingArrangement';
 ;
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/homeAdmin" element ={<HomeAdmin/>} />
           <Route path="/performance" element={<Performance/>}/>
           <Route path="/examRegistration" element={<ExamRegistration/>}/>
+          <Route path='/seatingArrangement' element={<SeatingArrangement/>}/>
           <Route path="/addAnnoucements" element={<AddAnnoucement/>}/>
           <Route path="/addSeatingArragement" element={<AddSeating/>}/>
           <Route path="/reevalutionform" element={<ReevalutionForm/>}/>
