@@ -19,7 +19,7 @@ import CgpaToPreForm from './forms/CgpaToPreFrom';
 import DuplicateGradeCardForm from './forms/DuplicateGradeCardForm'
 import DuplicateAdmissionTicketForm from './forms/DuplicateAdmissionTicketForm';
 import PaymentPage from './PaymentPage';
-;
+import SeatingArrangement from './SeatingArrangement';
 function App() {
 
   return (
@@ -47,7 +47,7 @@ function App() {
           <Route path="/gradeCardForm" element={<DuplicateGradeCardForm/>}/>
           <Route path="/duplicateAdmissionTicketForm" element={<DuplicateAdmissionTicketForm/>}/>
           <Route path="/payment" element={<PaymentPage/>}/>
-          
+          <Route path='/seatingArrangement' element={<SeatingArrangement/>}/>
         </Routes>
       </BrowserRouter>
       

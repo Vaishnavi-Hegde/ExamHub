@@ -8,7 +8,7 @@ function Navbar({ type = "student" }) {
     <>
       <nav className="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
         <div className="container-fluid">
-          <NavLink to={type === "student" ? "/home" : "/homeAdmin"} className="navbar-brand">
+          <NavLink to={type === "student" ? "/home" : "/addAnnoucements"} className="navbar-brand">
             ExamHub
           </NavLink>
           <button
